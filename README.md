@@ -131,6 +131,8 @@ We can download the latest version of Python from the official site. Simply run 
 
 Another way to write Python is by using `repl.it`, an online REPL (Read, Evaluate, Print, Loop). It is an online application that allows us to create coding environments (not just Python) completely in the browser.
 
+## Section 3: Python Numbers
+
 ### Intro to Data Types
 
 Some data types found within Python include:
