@@ -80,3 +80,202 @@ Science
 Computer Apps
 
 - Dropbox, Anki, Cinema 4D, BitTorrent
+
+## Section 2: Installation & Setup
+
+##### `Originally Started & Completed: 05/11/2023`
+
+### Python Versions: They Actually Matter!
+
+Python 3 was a _major change_ when released:
+
+- It was not backwards compatible with Python 2
+- It included some syntax changes
+- Featured major changes under the hood
+- It took 10+ years for Python 2 to be officially declared dead
+
+At this point, there is no real reason to learn Python 2, but it's worth knowing the history because:
+
+- Lots of tutorials online are for Python 2
+- Your computer may have 2.x pre-installed
+- Some dead libraries / tools still have not been updated to work with Python 3.x
+
+### 2 Ways of Running Python
+
+There are two different options when we want to run some Python code:
+
+**Interactive Python**
+
+In interactive mode, any code you enter is immediately run.
+Python executes each line as you enter it and then displays the output.
+Great for learning and trying things out, but not great for real applications.
+We start interactive python by typing `python` in a command prompt, or opening Python 3 from our Windows start menu
+
+**Python Scripts**
+
+Alternatively, you can (and should, typically) write Python code in a file.
+And then you can separately execute that script with Python.
+The code only runs when you manually tell it to.
+
+We can run a Python script by putting the code in a .py file, and running the following command:
+
+```
+python script_name.py
+```
+
+### Installation for Windows Users
+
+We can download the latest version of Python from the official site. Simply run the executable and follow the rather straightforward instructions.
+
+### The No-Installation Option: REPL.it
+
+Another way to write Python is by using `repl.it`, an online REPL (Read, Evaluate, Print, Loop). It is an online application that allows us to create coding environments (not just Python) completely in the browser.
+
+### Intro to Data Types
+
+Some data types found within Python include:
+
+- Strings
+- Integers
+- Booleans
+- FLoats
+- Bytes
+- Dictionary
+- List
+- Tuple
+- Set
+- Complex
+- Range
+- Frozenset
+
+We will start by exploring four of the more fundamental data types:
+
+- Strings
+- Integers
+- Booleans
+- Floats
+
+### Integers and Floats
+
+Two important numeric data types are `Integers` and `Floats`.
+
+**Integers**
+
+- Whole numbers only
+- Positive or negative
+- No decimal points!
+- Examples: 9, 378, -21
+
+**Floats**
+
+- Floating-point numbers
+- Written with a decimal point
+- Positive or negative
+- Examples: 1.5, 9.99, -2.0, 1.2349e12
+
+In Python 3, integers are **unbounded**; they can be as large as we want. Floats, however, are _not unbounded_; they have a limited precision.
+
+We can use `type()` to return the _type_ of something. So we can see that Python does, indeed, distinguish between Integer and Float. They are stored in memory differently, with floats taking up more memory, and mathematical operations are more complicated when used on floats.
+
+### Numeric Notations
+
+When writing an Integer or Float value, we can use underscores to separate every 3 numbers (like how we would with a comma in English). Using commas is _not valid_ for numeric types, and is actually treated as something entirely different in Python. An integer cannot start with leading zeros.
+
+```py
+1000 # Valid
+1_000 # Valid
+1,000 # Not valid!
+01 # Not Valid!
+01.00 # Valid
+1_000_000.55 # Valid
+```
+
+We can also scientific notation with a Float:
+
+```py
+1286e+19
+1286e19
+6.7e-3
+```
+
+### Basic Operators
+
+`Operators` are special characters in Python that perform **operations** on values (**operands**). Below are some of the most common:
+
+- +, -, \*, /, %, \*\*
+- > , <, >=, <=, ==, !=
+- and, or, not, is, in
+- !=, =, +=, -=, \*=, /=, |=
+
+Mathematical Operators:
+
+```py
+1 + 4 # Addition operator
+4 - 1 # Subtraction operator
+5 * 2.5 # Multiplication operator
+4 / 2 # Division operator
+```
+
+**Note:** We can perform operations when the operand is a combination of a Float and an Integer. The result will always be a Float.
+
+**Order of Operations**
+
+- Parenthesis: ()
+- Multiplication and Division: \*, /, //
+- Addition and Subtraction: +, -
+
+We can manipulate the typical PEMDAS order of operations by surrounding code we want to evaluate first in parenthesis.
+
+```py
+6 * 3 - 10      # Result: 8
+6 * (3 - 10)    # Result: -42
+```
+
+### Lesser Known Operators
+
+Some other numeric operators that are a little lesser known:
+
+**Integer Division**: `//`
+
+- This is how we do division where the result is _rounded down_ to nearest integer
+- This can be confusing for negative numbers, where rounding down means to a number _further away from 0_, rather than closer to 0 when working with positive numbers.
+
+```py
+10 / 3  # Result: 3.3333333
+10 // 3 # Result: 3
+
+4 / 5   # Result: 0.8
+4 // 5  # Result: 0
+
+10 // -3 # Result: -4
+```
+
+**Exponentiation**: `**`
+
+- This is how we raise one power to another power
+
+```py
+4 ** 3 # Result: 4 * 4 * 4 => 64
+```
+
+**Modulo**: `%`
+
+- Also known as the remainder operator
+- The right side operand is divided into the left side operand as many times as possible. The remainder is the result of the modulo operator
+
+```py
+38 % 10     # Result: 8 -- 10 divides 38 three full times, leaving 8 as the remainder
+10 % 7      # Result 3
+25 % 9      # Result: 7
+```
+
+Commonly used to determine if a number is even or odd: If we can divide cleanly by 2 (no remainder), the number must be even.
+
+### Python Comments
+
+Python will ignore any lines starting with the `#` symbol. This is a `comment`: this text will never be executed, and is intended to allow authors to leave useful notes in a program.
+
+```py
+# This line never runs
+1 + 1 # To the left of this line will run!
+```
