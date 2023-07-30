@@ -133,6 +133,8 @@ Another way to write Python is by using `repl.it`, an online REPL (Read, Evaluat
 
 ## Section 3: Python Numbers
 
+##### `Originally Started & Completed: 05/11/2023`
+
 ### Intro to Data Types
 
 Some data types found within Python include:
@@ -205,7 +207,7 @@ We can also scientific notation with a Float:
 `Operators` are special characters in Python that perform **operations** on values (**operands**). Below are some of the most common:
 
 - +, -, \*, /, %, \*\*
-- > , <, >=, <=, ==, !=
+- \> , <, >=, <=, ==, !=
 - and, or, not, is, in
 - !=, =, +=, -=, \*=, /=, |=
 
@@ -280,4 +282,110 @@ Python will ignore any lines starting with the `#` symbol. This is a `comment`: 
 ```py
 # This line never runs
 1 + 1 # To the left of this line will run!
+```
+
+## Section 4: Variables Basics
+
+##### `Originally Started & Completed: 07/29/2023`
+
+### Introducing Variables
+
+`Variables` are what we use to store values and give them a label. This is useful so that we can:
+
+- Refer back to it later
+- Use that value to do stuff
+- Change it later on
+
+To **declare** a variable, we write:
+
+```py
+age = 36
+```
+
+Here, _age_ is the name of the variable, and _36_ is its value. The _=_ symbol is the `assignment operator`, and is used to assign a value (on its right) to a variable (on its left).
+
+We can now refer back to _age_ to check its value, or update its value. For example, we could add to the _age_:
+
+```py
+age = age + 1 # Birthday happened!
+```
+
+### Variable Naming
+
+When naming variables, there are a few rules to follow:
+
+- Variable names can **contain** numbers, _but_ they cannot **start** with a number
+- Variable names cannot contain spaces
+  - Use `snake case` instead by using the **underscore** character
+- Variable names cannot be a Python **keyword / reserved word**, like class, finally, continue.
+
+```py
+variable123 # Valid
+first_name  # Valid
+player_1    # Valid
+123variable # Invalid!
+first name  # Invalid!
+False       # Invalid!
+def         # Invalid!
+```
+
+Use names that make it clear what the variable is storing. Rather than `i`, use `score`, for example.
+
+Typically, we write `constants` (values that will not change) in all uppercase letters.
+
+### Assignment Operators
+
+Besides the equal sign, other assignment operators allow us to change the value that is currently in an existing variable **using that variable's current value**.
+
+The following are some of the assignment operators:
+
+- +=, -=, \*=, /=, //=, \*\*=, %=
+
+```py
+score = 2
+score = score + 1
+
+score += 1 # Equivalent to score = score + 1
+score -= 1 # Equivalent to score = score - 1
+```
+
+### Numbers & Variables In the Wild
+
+In this lecture we examined the use of numbers and variables in the wild! For example, the Frets on Fire game (written in Python) uses many variables to help keep track of the player's score.
+
+### The Print() Function
+
+The `print()` function prints out any values we pass to it to "standard output". It does not return anything.
+
+```py
+print("Hello, World!")
+```
+
+While this function is not related to variables, we will need to use it in the upcoming challenge.
+
+### Magic Trick Exercise
+
+This little exercise will require you to use assignment operators like `+=`, `-=`, and `*=` Download the starter code and follow the instructions in the file. You’ll pick a secret number, save it in a variable, and update that variable according to the steps detailed in the file. At the bottom of the file you’ll find my magical prediction (it’s really not impressive or magical at all).
+
+```py
+# Create a variable called secret_num and set it to any number you'd like:
+secret_num = 7
+
+# Increase secret_num by 1:
+secret_num += 1
+
+# Next, take the new number and double it:
+secret_num *= 2
+
+# Next, take the new number and add four to it:
+secret_num += 4
+
+# Next, take the new number and divide it by two:
+secret_num /= 2
+
+# Next, take the new number and subtract your original secret from it:
+secret_num -= 7
+
+# Print the final result:
+print(secret_num)
 ```
