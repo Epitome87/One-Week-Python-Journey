@@ -142,7 +142,7 @@ Some data types found within Python include:
 - Strings
 - Integers
 - Booleans
-- FLoats
+- Floats
 - Bytes
 - Dictionary
 - List
@@ -388,4 +388,98 @@ secret_num -= 7
 
 # Print the final result:
 print(secret_num)
+```
+
+## Section 5: String Basics
+
+##### `Originally Started: 12/08/2023`
+
+### Introducing Strings
+
+A `String` is another basic data type in Python. Strings are a textual datatype and must be wrapped in quotes (either single or double). They are "strings of characters."
+
+An example of a string:
+
+```py
+'hello word'
+'hi"  # Invalid - opening and closing quotes must match in type!
+type('69') # str
+type(69) # int
+```
+
+Note that if we want our strings to have `'` or `"` in them, we have to choose our opening and closing quotes appropriately (by using the opposite).
+
+```py
+"She said 'hello'" # Valid
+"She said "hello"" # Invalid
+'You're not the boss!' # Invalid
+```
+
+### String Variables
+
+Remember, in Python the _type_ of a variable can be changed at any time. Also, like with numbers, we can store strings in variables:
+
+```py
+color = "Magenta" # Note the single quotes
+twitter_handle = '@Epitome87' # Note the double quotes
+```
+
+### String Operators
+
+**Addition (Concatenation)**
+
+When we work with strings, the `+` operator still works, but it does not add strings (like with numbers). Rather, it `concatenates` (joins) strings together.
+
+```py
+first_name = "Matthew"
+last_name = "McGrath"
+"hello " + first_name + " " + last_name # "hello Matthew McGrath"
+
+"4" + "5" # "45"
+```
+
+**Multiplication (Repeat)**
+
+We can also multiply a string by a number, which will repeat that string.
+
+```py
+'ha' * 4 # 'hahahaha'
+4 * 'ha' # 'hahahaha'
+'ha' * 'ha' # Invalid - must have one operand be a number
+```
+
+### String Indexing
+
+Every single string is ordered. Every single string is indexed, starting at 0.
+
+```py
+msg = 'I <3 Cats'
+msg[0] # 'I'
+msg[5] # 'C'
+
+'Hello'[1] # 'e'
+'Hello'[69]' # Error: string index out of range
+```
+
+We can also use negative indices, which will be counted backward starting from the end of the string:
+
+```py
+'Matthew'[-1] # 'w'
+```
+
+### The Special Value - None
+
+`None` is a special value in Python that denotes the **lack of value**. It is not the same as zero or an empty string (those are still values). Think of it as Python's version of `null` in other programming languages.
+
+```py
+active_user = None # We don't know this information yet, so set to None
+
+# Later on...
+active_user = 'Matthew'
+```
+
+It even has its own type:
+
+```py
+type(None) # NoneType
 ```
