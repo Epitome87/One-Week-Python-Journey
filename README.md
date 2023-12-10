@@ -483,3 +483,118 @@ It even has its own type:
 ```py
 type(None) # NoneType
 ```
+
+## Section 6: A Little More On Strings
+
+##### `Originally Started: 12/09/2023`
+
+### String Slices
+
+We've seen how to access a single character of a string using indices. We can access a portion of a string -- a `slice` if you will. We use the notation `string[startIndex:stopIndex]`:
+
+```py
+msg = 'I <3 Cats'
+msg[2:6] # '<3 C'
+
+animal = 'catdog'
+animal[3:6]
+```
+
+Note that the stopIndex is _exclusive_ -- it is up to, but not including, that index.
+
+We can omit the start or stop index if we wish to start from the beginning or slice until the end, respectively:
+
+```py
+animal[:3] # 'cat'
+animal[3:] # 'dog'
+```
+
+We can provide a 3rd argument, the `step`, which will only slice every step of the string:
+
+```py
+'123456'[0:6] # '135' - Include every 2nd character
+```
+
+### Revisiting Print()
+
+The `print()` function prints out any values we pass to it to "standard output." It does not return anything.
+
+```py
+print('Hello')
+```
+
+### Escape Characters
+
+`Escape character1` are special sequences inside of Python strings that start with a backslash. Their regular characters will be _escaped_. Some common escape characters are:
+
+- Newline: `\n`
+- Tab: `\t`
+- Double Quote: `\"`
+- Single Quote: `\'`
+- Backslash: `\\`
+
+```py
+greeting = 'hello \tworld' # 'hello   world'
+greeting = "He said \"Hello\"" # "He said "Hello""
+```
+
+### Triple Quoted Strings
+
+We can use three single or double quotes to allow us to write strings that span across multiple lines. It's for readability sake, as Python still will produce the underlying newline characters in the output.
+
+```py
+'''
+Hello, World!
+Today is a great day!
+We can have single quotes as well as double quotes,
+like in he said "Let's go!"
+'''
+
+# Output:
+'\nHello, World!\n Today is a great day!'\nWe can have single quotes as well as double quotes,\nlike in he said "Let\'s go!"
+
+address = """
+Chicken Little
+123 Chicken Wing Lane
+Denver Colorado 21736
+"""
+
+print(address) # Result of the above print is human readable address
+```
+
+### Strings in the Wild
+
+Strings are used everywhere in Python programming! If we are working with text and output, it is safe to assume strings are used in some form.
+
+### Nico Hülkenberg Exercise
+
+It's time to practice what you've learned about strings!
+
+```py
+first = "Nico"
+last = "Hülkenberg"
+
+# - Create a variable called "full_name" that combines first and last with a space between them.
+full_name = first + ' ' + last;
+
+# - Print it out
+print(full_name)
+
+# - Create an "initials" variable that holds the first character of first name followed by the first character of last.
+initials = first[0] + last[0]
+
+# - Print it out
+print(initials)
+
+# - Create an "initials_2" variable that holds the first character of first followed by the first character of last, with periods after each letter.
+initials_2 = first[0] + '.' + last[0] + '.'
+
+# - Print it out
+print(initials_2)
+
+# - Create a nickname variable that holds the first 4 characters of "last"
+nickname = last[:4]
+
+# - Print it out
+print(nickname)
+```
