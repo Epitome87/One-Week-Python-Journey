@@ -598,3 +598,127 @@ nickname = last[:4]
 # - Print it out
 print(nickname)
 ```
+
+## Section 7: Strings & Built-Ins
+
+##### `Originally Started: 12/11/2023`
+
+### Introducing Functions
+
+A `function` is a reusable piece of code that has a name. To execute a function, we use parenthesis after its name. Python comes with many built-in functions, such as `help`, `type`, `print`, etc.
+
+```py
+help("string")
+type("int")
+print("Hello, World!")
+```
+
+`Arguments` are the _inputs_ to a function.
+
+### The Len Function
+
+The `len()` function will return the length of whatever item we pass to it. So far Strings are the only sequence we have seen, but soon there will be others!
+
+```py
+word = "Chicken"
+len(word) # 7
+```
+
+Note that we can pass the name of other built-in functions to the `help` function:
+
+```py
+help(len) # Help is output: "Return the number of items in a container"
+```
+
+### The Input Function
+
+The `input()` function will prompt a user to enter some input, convert it into a string, and then return it. We can use it to gather user input in our programs. The argument we pass into it will be the text that is output while waiting for the user's input.
+
+```py
+age = input("How old are you?") # Age will store whatever the user inputs
+```
+
+The result of input is _always_ a string -- even if the user enters a number.
+
+### Type Casting
+
+In order to cast a variable of one type to another, we use **casting types**.
+
+```py
+int(age)      # 19
+float("6.9")  # 6.9
+str(44.5)     # "44.5"
+int(6.9)      # 6 - truncated the float
+
+age = "19"
+days_old = age * 365 #'19191919...' etc. Doesn't work how we want!
+days_old = int(age) * 365 # Correct!
+```
+
+### Age Calculator Exercise
+
+Create a program that asks a user how many years old the user is. Output the number of days the user is old.
+
+```py
+years_old = input("How many years old are you?")
+days_old = float(years_old) * 365
+print("You are " + days_old + " days old!")
+```
+
+### F-Strings
+
+`F-Strings` (formatted string) are an easy way to generate strings that contain interpolated expressions. Any code between two curly braces will be evaluated and then the result will be turned into a string and inserted into the overall string. This feature is new to Python 3!
+
+```py
+f"There are {24 * 60 * 60} seconds in a day"
+# There are 86400 seconds in a day"
+```
+
+```py
+age = input("How old are you?)
+days = float(age) * 365
+print("You are " + days + " days old") # Invalid! Cannot concatenate a number with a string
+print("You are " + str(days) + " days old") # Could solve it this way, or...
+print(f"You are {days} old") # Using F-Strings - much cleaner!
+```
+
+### F-Strings & Type Casting in the Wild
+
+F-Strings and type castings can be found everywhere. From video games, e-commerce apps, and data science.
+
+### Shopping Cart Exercise
+
+Write a Python script that does the following:
+
+- Prints out a "banner" to welcome users to our shop
+- Asks the user for the name of the item they are buying
+- Asks the user for the price of that item
+- Asks the user for the quantity they are purchasing
+- Prints out a message that includes their subtotal (quantity x price)
+
+Here's an example of that script running:
+
+```
+Welcome to our useless store!
+*****************************
+What item are you purchasing? (taco)
+What is the price of taco? (59.99)
+How many (pillow) are you buying? (4)
+
+Added 4 pillow(s) to shopping cart
+Subtotal: $239.96
+```
+
+Solution:
+
+```py
+print("Welcome to Matthew's Store!")
+print("*" * 30)
+
+item = input("What item are you purchasing: ")
+price = float(input(f"What is the price of {item}: "))
+qty = int(input(f"How many {item} are you buying: "))
+
+print(f"Added {qt} pillow(s) to shopping cart")
+print(f"Subtotal: ${price * qt}")
+```
